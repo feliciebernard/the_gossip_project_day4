@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
     @user = User.new
   end
@@ -15,15 +15,15 @@ class SessionsController < ApplicationController
     flash[:success] = "Connection établie !"
     redirect_to gossip_path
   else
-    flash[:alert] = "User not found."
-    # redirige où tu veux, avec un flash ou pas
-
-  else
-    flash.now[:danger] = 'Invalid email/password combination'
+    flash[:alert] = "Utilisateur inexistant !"
     render 'new'
   end
+end
 
-  def destroy
-    session.delete(:user_id)
-  end
+def destroy
+  session.delete(current_user.id)
+  session[:user_id] = nil
+  puts "Utilisateur déconnecté"
+  flash[:notice] = "A bientôt sur The Hacking Project !"
+end
 end

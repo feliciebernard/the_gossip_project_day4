@@ -5,19 +5,19 @@
 <%= form_tag url_for(action: 'create'), method: "post" do %>
 
 <%= label_tag 'Title' %>
-<%= text_field_tag 'title', @gossips.title %>
+<%= text_field_tag 'title', @gossip.title %>
 <br /> <br />
 
 <%= label_tag 'Content' %>
-<%= text_area_tag 'content', @gossips.content %>
+<%= text_area_tag 'content', @gossip.content %>
 <br /> <br />
 
 <%= submit_tag "Create Gossip" %>
 
-<% if @gossips.errors.any? %>
+<% if @gossip.errors.any? %>
 <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
 <ul>
-  <% @gossips.errors.full_messages.each do |message| %>
+  <% @gossip.errors.full_messages.each do |message| %>
   <li><%= message %></li>
   <% end %>
 </ul>
