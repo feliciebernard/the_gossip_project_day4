@@ -1,0 +1,88 @@
+<body>
+  <h1 class="text-center p-3"> Rejoindre la communauté des potineurs</h1>
+
+  <h2 class="text-center p-3"> Pour cela, nous avons besoin de te connaître un peu plus... </h2>
+
+  <% if @user.errors.any? %>
+  <div class="alert alert-danger">
+  <p>Nous n'avons pas réussi à créer le profil pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <%= form_for @user, class: 'form-horizontal' do |f| %>
+
+      <div class="form-group">
+        <%= f.label :first_name, "Prénom", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name, "Nom", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "Présente-toi en quelques mots :)", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :age, "Quel est ton âge ?", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_field :age, class: 'form-control' %>
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <%= f.label :email, "Adresse mail", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </div>
+      </div>
+
+
+      <%end%>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+
