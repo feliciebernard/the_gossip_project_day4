@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     puts "Login ok"
     flash[:success] = "Connection établie !"
-    redirect_to gossip_path
+    redirect_to gossips_path
   else
     flash[:alert] = "Utilisateur inexistant !"
     render 'new'
