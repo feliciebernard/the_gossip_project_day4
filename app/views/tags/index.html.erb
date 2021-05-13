@@ -1,0 +1,40 @@
+<body>
+  
+<h1>Les tags</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Nom du tag</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Tag.all.each do |t| %>
+    <tr>
+      <td> <%= t.id %></td>
+      <td> <%= t.title %></td>
+      <td>
+        <a href="<%= edit_tag_path(t.id)%>" class="btn btn-primary">Editer</a>
+        <a href="<%= tag_path(t.id)%>" class="btn btn-danger" data-confirm="Etes-vous sûr de supprimer cette catégorie ?" data-method="DELETE">Supprimer</a>
+    </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>
+
+<p>
+
+          <a href="<%= new_tag_path%>" class="btn btn-success">Créer une nouvelle catégorie</a>
+
+</p>
+
+</body>
+</html>
+
+
+<!-- >

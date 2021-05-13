@@ -1,0 +1,24 @@
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <p>Je te présente LE bouton qui te permettra de créer un potin...</p>
+      <p><a href="<%= new_gossip_path%>" class="btn btn-success" href="#" role="button">Créer un nouveau potin</a></p>
+    </div>
+  </div>
+  <tbody>
+  </tbody>
+
+  <div class="row">
+    <%@gossips.each do |gossip|%>
+    <div class="col-md-4">
+      <h3><%= gossip.title %></h3>
+      <p><a href="<%= gossip_path(gossip.id)%>"> <%=gossip.user.first_name %> qui habite à</a><br>
+        <a href="cities/<%=(gossip.user.city.id)%>"><%=gossip.user.city.name%></a></p>
+        <p><a href="<%= edit_gossip_path(gossip.id)%>" class="btn btn-primary" role="button">Editer</a><a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" role="button" data-confirm="Etes vous-sûr ?" data-method="DELETE">Supprimer</a></p>
+      </div>
+      <% end %>
+    </div>
+
+    <hr>
+  </body>

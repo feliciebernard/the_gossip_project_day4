@@ -1,0 +1,23 @@
+<body>
+<h1 class="text-center p-3"> Salut à toi potineur n°<%= params[:id]%> !</h1>
+
+<h1 class="text-center p-3"> Voici tes informations personnelles ultra secrètes </h1>
+
+
+
+
+<pre>
+Prénom : <%= @user.first_name %>
+Nom : <%= @user.last_name %>
+Description : <%= @user.description %>
+E-mail : <%= @user.email %>
+Age : <%= @user.age %>
+City : <a href=cities_path><%= @user.city.name %></a>
+</pre>
+
+</body>
+
+</html>
+
+
+

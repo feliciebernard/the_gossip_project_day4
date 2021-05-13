@@ -1,0 +1,14 @@
+<body>
+  <h1 class="d-flex justify-content-center"><%=@city.name%>, bonjour !</h1><br>
+  <p>Voici la liste des potins de <%=@city.name%>...</p>
+
+  <%Gossip.all.each do |gossip|%>
+  <button type="button" class="list-group-item list-group-item-action">
+    <p class="text-capitalize">Titre : <%=gossip.title%></p>
+    <p>Gossip : <%=gossip.content%><br></p>
+
+  </button>
+  <%end%>
+
+</body>
+
