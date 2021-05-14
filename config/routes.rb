@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'the_gossip_project#contact'
   get '/welcome/:potineur', to: 'the_gossip_project#welcome'
   get '/welcome', to: 'the_gossip_project#welcome'
+  
   resources :gossips
   resources :users
   resources :tags

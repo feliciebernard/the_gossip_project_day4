@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_action :only_signed_in
-  helper_method :current_user
+ # helper_method :current_user
   
   private
 
@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_user
-    return nil if !session[:auth] || !session[:auth]['id']
-    return @user if @user
-    @user = User.find(session[:auth]['id'])
-  end
+  #def current_user
+   # return nil if !session[:auth] || !session[:auth]['id']
+    #return @user if @user
+    #@user = User.find(session[:auth]['id'])
+  #end
 end
