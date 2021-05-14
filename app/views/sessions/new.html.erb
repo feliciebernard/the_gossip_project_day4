@@ -2,29 +2,36 @@
  
 <div class="connexion">
 
-  <div class="gossip"></div>
+  <div class="panel panel-default">
+    <div class="panel-body">
 
-  <h2 class="mt-5">S'identifier</h2>
-  <br>
-  <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= form_for :user, url: sessions_path, html: {class: 'form-horizontal'} do |f| %>
+
+      <div class="form-group">
+        <%= f.label :email, "Adresse mail", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+ 
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+        </div>
+      </div>
 
 
-  <div class="form-group">
-    <%= label_tag 'email'%>
-    <%= text_field_tag 'email', nil, placeholder: 'Email', class: 'form-control'%>
+      <%end%>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= label_tag 'Mot de passe'%>
-    <%= password_field_tag 'password', nil, placeholder: 'Mot de passe', class: 'form-control'%>
-  </div>
-  <br>
-
-  <div><%= submit_tag "Se connecter", class: 'btn btn-primary' %></div>
-<% end %>
-
-<div>
-
 
 </body>
 

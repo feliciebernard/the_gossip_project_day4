@@ -30,18 +30,14 @@
           <a class="nav-link" href="/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <% if current_user == nil %>
+          
           <li class="nav-item active ">
-            <a class="btn btn-link" href="/sessions/new">S'identifier<span class="sr-only ">(current)</span></a>
+            <a class="btn btn-link" href="<%= new_session_path%>">S'identifier<span class="sr-only ">(current)</span></a>
           </li>
           <li class="nav-item active ">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="/users/new">S'inscrire<span class="sr-only ">(current)</span></a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="<%= new_user_path%>">S'inscrire<span class="sr-only ">(current)</span></a>
           </li>
-          <%else%>
-          <li class="nav-item active ">
-            <a class="btn btn-outline-danger my-2 my-sm-0" <%= link_to "Se déconnecter", session_path(session.id), method: :delete %></a>
-          </li>
-          <%end%>
+      
         </li>
       </ul>
     </div>

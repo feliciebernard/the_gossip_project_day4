@@ -1,5 +1,7 @@
 class GossipsController < ApplicationController
 
+  skip_before_action :only_signed_in, only: [:index]
+
   def index
     @gossips = Gossip.all
   end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :only_signed_in, only: [:new, :create, :confirm]
   
   def index
     @users = User.all
